@@ -12,7 +12,7 @@ class BlogImageInlineFormSet(BaseInlineFormSet):
         super().clean()
         total_forms = len([form for form in self.forms if not form.cleaned_data.get('DELETE', False) and form.cleaned_data.get('image')])
         if total_forms == 0:
-            raise ValidationError("РќРµРѕР±С…РѕРґРёРјРѕ РґРѕР±Р°РІРёС‚СЊ С…РѕС‚СЏ Р±С‹ РѕРґРЅРѕ РёР·РѕР±СЂР°Р¶РµРЅРёРµ.")
+            raise ValidationError("Необходимо добавить хотя бы одно изображение.")
 
 
 class CaseStudyImageInline(admin.TabularInline):
